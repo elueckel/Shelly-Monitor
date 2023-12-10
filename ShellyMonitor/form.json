@@ -1,0 +1,337 @@
+{
+    "elements": [
+        {
+            "type": "ExpansionPanel",
+            "caption": "Module Help",
+            "items": [
+                {
+                    "type": "Label",
+                    "label": "This module allows monitoring variables based on their profiles within Symcon. A standard use case is to check for empty batteries."
+                },
+                {
+                    "type": "Label",
+                    "label": "To use the module Activate it, set the frequency when profiles should be checked and how you want to get informed about e.g. empty batteries."
+                },
+                {
+                    "type": "Label",
+                    "label": "To get notified of events it is possible to display a HTML box for the webfront or send out email/app notifications."
+                },
+                {
+                    "type": "Label",
+                    "label": "The default values check for empty batteries - if you want to check for something else, simply delete the default values and replace them."
+                }
+            ]
+        },
+        {
+            "type": "Label",
+            "label": "Profile Monitor - Configuration"
+        },
+        {
+            "type": "CheckBox",
+            "name": "Active",
+            "caption": "Active"
+        },
+        {
+            "type": "Label",
+            "label": ""
+        },
+        {
+            "type": "Label",
+            "label": "Timer - Configuration"
+        },
+        {
+            "type": "Select",
+            "name": "TimerMethod",
+            "caption": "Check Timer Method",
+            "options": [
+                {
+                    "caption": "Timer based on Days",
+                    "value": 0
+                },
+                {
+                    "caption": "Timer based on Minutes",
+                    "value": 1
+                }
+            ]
+        },
+        {
+            "type": "RowLayout",
+            "items": [
+                {
+                    "type": "NumberSpinner",
+                    "name": "ExecutionHour",
+                    "caption": "Daily - Hour",
+                    "suffix": "",
+                    "minimum": "0",
+                    "maximum": "24"
+                },
+                {
+                    "type": "NumberSpinner",
+                    "name": "ExecutionMinute",
+                    "caption": "Daily - Minute",
+                    "suffix": "",
+                    "minimum": "0",
+                    "maximum": "59"
+                },
+                {
+                    "type": "NumberSpinner",
+                    "name": "ExecutionInterval",
+                    "caption": "Daily - Interval",
+                    "suffix": "days",
+                    "minimum": "1",
+                    "maximum": "7"
+                },
+                {
+                    "type": "NumberSpinner",
+                    "name": "ExecutionMinuteMinute",
+                    "caption": "Minute based Timer - Minute",
+                    "suffix": "",
+                    "minimum": "1",
+                    "maximum": "59"
+                }
+            ]
+        },
+        {
+            "type": "Label",
+            "label": ""
+        },
+        {
+            "type": "Label",
+            "label": "Profiles to be monitored"
+        },
+        {
+            "type": "List",
+            "name": "Profiles2Monitor",
+            "caption": "Profiles to monitor - Default for empty batteries",
+            "rowCount": 5,
+            "add": true,
+            "delete": true,
+            "columns": [
+                {
+                    "caption": "Profile Name",
+                    "name": "ProfileName",
+                    "width": "150",
+                    "add": 0,
+                    "edit": {
+                        "type": "ValidationTextBox"
+                    }
+                },
+                {
+                    "caption": "Profile Value",
+                    "name": "ProfileValue",
+                    "width": "150",
+                    "add": 0,
+                    "edit": {
+                        "type": "ValidationTextBox"
+                    }
+                }
+            ]
+        },
+        {
+            "type": "ExpansionPanel",
+            "caption": "Variables to ignore",
+            "items": [
+                {
+                    "type": "List",
+                    "name": "IDs2Ignore",
+                    "caption": "Variables to ignore",
+                    "rowCount": 15,
+                    "add": true,
+                    "delete": true,
+                    "columns": [
+                        {
+                            "caption": "Variable",
+                            "name": "ID2Ignore",
+                            "width": "auto",
+                            "add": 0,
+                            "edit": {
+                                "type": "SelectObject",
+                                "validate": "^[0-9]{5}$"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "CheckBox",
+            "name": "Webfront_HTML",
+            "caption": "Create HTML Box for webfront"
+        },
+        {
+            "type": "CheckBox",
+            "name": "Variable_Output",
+            "caption": "Store results as JSON in variable"
+        },
+        {
+            "type": "CheckBox",
+            "name": "All_Variable_Output",
+            "caption": "Store all checked variables as JSON in variable"
+        },
+        {
+            "type": "CheckBox",
+            "name": "NotifyByEmail",
+            "caption": "Notify by Email"
+        },
+        {
+            "type": "SelectInstance",
+            "name": "EmailVariable",
+            "caption": "Email ID Selection"
+        },
+        {
+                "type": "CheckBox",
+                "name": "NotifyByApp",
+                "caption": "Notify by App"
+        },
+        {
+            "type": "SelectInstance",
+            "name": "WebfrontVariable",
+            "caption": "Webfront ID Selection"
+        },
+	{
+            "type": "SelectLink",
+            "name": "NotificationOpen",
+            "caption": "Object to open when clicking on notification"
+        },
+        {
+            "type": "ExpansionPanel",
+            "caption": "HTML Box Configuration & Translation",
+            "items": [
+                {
+                    "type": "CheckBox",
+                    "name": "HTMLBoxID",
+                    "caption": "Display ID"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "HTMLBoxValue",
+                    "caption": "Object Name"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "HTMLBoxParent",
+                    "caption": "Display Parent"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "HTMLBoxLocation",
+                    "caption": "Display Location"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "HTMLBoxLastUpdate",
+                    "caption": "Display Last Update"
+                },
+                {
+                    "type": "ValidationTextBox",
+                    "name": "HTMLBoxAktorName",
+                    "caption": "HTML Box Actor Objectname",
+                    "width": "100%"
+                },
+                {
+                    "type": "ValidationTextBox",
+                    "name": "HTMLBoxNothingFound",
+                    "caption": "HTML Box Nothing found text",
+                    "widthUr": "100%"
+                },
+                {
+                    "type": "ValidationTextBox",
+                    "name": "HTMLBoxParentTranslation",
+                    "caption": "Table header - Parent Object",
+                    "width": "100%"
+                },
+                {
+                    "type": "ValidationTextBox",
+                    "name": "HTMLBoxLocationTranslation",
+                    "caption": "Table header - Location in Object Tree",
+                    "width": "100%"
+                },
+                {
+                    "type": "NumberSpinner",
+                    "name": "HTMLBoxCellPadding",
+                    "caption": "Padding between values",
+                    "suffix": "pixel",
+                    "minimum": "0",
+                    "maximum": "50"
+                }
+            ]
+        },
+        {
+            "type": "ExpansionPanel",
+            "caption": "Message Configuration & Translation",
+            "items": [
+                {
+                    "type": "CheckBox",
+                    "name": "EmailValue",
+                    "caption": "Object Name"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "EmailParent",
+                    "caption": "Display Parent"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "EmailID",
+                    "caption": "Display ID"
+                },
+                {
+                    "type": "CheckBox",
+                    "name": "EmailLocation",
+                    "caption": "Display Location"
+                },
+                {
+                    "type": "ValidationTextBox",
+                    "name": "NotificationOKSubject",
+                    "caption": "Subject of - No Error - message (max. 32 Char.)",
+                    "width": "100%",
+                    "validate": "^[A-z0-9\\s]{0,32}$"
+                },
+                {
+                    "type": "ValidationTextBox",
+                    "name": "NotificationOKText",
+                    "caption": "Nothing found text in Email",
+                    "width": "100%"
+                },
+                {
+                    "type": "ValidationTextBox",
+                    "name": "NotificationOKTextApp",
+                    "caption": "Nothing found text in App",
+                    "width": "100%"
+                },
+                {
+                    "type": "ValidationTextBox",
+                    "name": "NotificationErrorSubject",
+                    "caption": "Subject of - Error - message (max. 32 Char.)",
+                    "width": "100%",
+                    "validate": "^[A-z0-9\\s]{0,32}$"
+                },
+                {
+                    "type": "ValidationTextBox",
+                    "name": "NotificationErrorText",
+                    "caption": "Something found text in Email",
+                    "width": "100%"
+                },
+                {
+                    "type": "ValidationTextBox",
+                    "name": "NotificationErrorTextApp",
+                    "caption": "Something found text in App",
+                    "width": "100%"
+                }
+		    ]
+        }
+    ],
+    "actions": [
+        {
+        "type": "RowLayout",
+            "items": [
+                {
+                    "type": "Button",
+                    "label": "Test & Check Profiles",
+                    "onClick": "BW_Check($id);"
+                }
+            ]
+        }
+    ],
+    "status": []
+}

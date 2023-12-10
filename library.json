@@ -1,0 +1,12 @@
+{
+    "id": "{FEE82854-B8BE-158B-DBC5-7A66AFA59E89}",
+    "name": "ShellyMonitor",
+    "author": "elueckel",
+    "url": "https://github.com/elueckel/shelly-monitor",
+    "compatibility": {
+        "version": "6.0"
+    },
+    "version": "1.0",
+    "build": 0,
+    "date": 0
+}
